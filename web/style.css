@@ -1,0 +1,119 @@
+/* this file is loaded by index.html and styles the page */
+header
+{
+   background-image: url("https://cdn.discordapp.com/avatars/673732226793603079/7c29738a776dee160a7e68313a5b93f5.png?size=2048");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  width: 1000px;
+  height: 200px;
+  background-position: top center;
+  
+  
+}
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #FF75AF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+   background-color: #111;
+  color: #FF75AF;
+ 
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #995675;
+}
+.sub {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.sub a {
+  float: left;
+  color: #FF75AF;
+  text-align: center;
+  padding: 3px 5px;
+  font-size: 12px;
+  text-decoration: none;
+ 
+}
+
+/* Change the color of links on hover */
+.sub a:hover {
+   background-color: #111;
+  color: #FF75AF;
+ 
+}
+
+/* Add a color to the active/current link */
+.sub a.active {
+  background-color: #995675;
+}
+
+body {
+  width: 1200px;
+  height:1200px;
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+  background: black;
+  color: #ff75AF;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+  line-height: 2;
+  text-align: center;
+}
+
+h4,h2 {
+  font-style: italic;
+  line-height: 2;
+  text-align: top, center;
+}
+table, td, th {
+  border: 1px solid #32FF67;
+  position: center;
+}
+table {
+  width: 50%;
+
+}
+
+th {
+  height: 50px;
+  text-align: center;
+}
+
+a:hover {
+  background-color: #995675;
+}
+
+footer {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid ;
+}
+footer.sub{
+   margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid ;
+}
+p.warning {
+  color: red;
+  border: 2px solid yellow;
+}

@@ -1,0 +1,49 @@
+const { RichEmbed } = require("discord.js")
+const { cyan } = require("../../colours.json");
+const fetch = require('node-fetch');
+
+module.exports = { 
+    config: {
+        name: "x2",
+        description: "sends a ping to guild member to announce a x2 boost",
+        usage: "!x2",
+        category: "miscellaneous",
+        accessibleby: "Members",
+        aliases: ["2"]
+    },
+    run: async (bot, message, args) => {
+     if (message.member.roles.has("686604944824074259")) {
+          let embed = new RichEmbed()
+    let msg = await  message.delete().catch(O_o => {});
+    embed.setColor(cyan)
+        .setAuthor(`${message.guild.me.displayName} Help`, message.guild.iconURL)
+        .setThumbnail(bot.user.displayAvatarURL)
+        .setTimestamp()
+        .setDescription(`<@&686604944824074259> <@&687961258460315689>  x2 boost activated`)
+        .setFooter("Shamiko-min", bot.user.displayAvatarURL)
+        message.channel.send(embed).then(msg => msg.delete(1200000))
+        message.channel.send("<@&686604944824074259> <@&687961258460315689>").then(msg => msg.delete(1000))
+      
+  
+    
+    } else 
+      if (message.member.roles.has("687961258460315689")) {
+          let embed = new RichEmbed()
+    let msg = await  message.delete().catch(O_o => {});
+    embed.setColor(cyan)
+        .setAuthor(`${message.guild.me.displayName} Help`, message.guild.iconURL)
+        .setThumbnail(bot.user.displayAvatarURL)
+        .setTimestamp()
+        .setDescription(`<@&686604944824074259> <@&687961258460315689>  x2 boost activated`)
+        .setFooter("Shamiko-min", bot.user.displayAvatarURL)
+        message.channel.send(embed).then(msg => msg.delete(1200000))
+        message.channel.send("<@&686604944824074259> <@&687961258460315689>").then(msg => msg.delete(1000))
+      
+  
+    
+    } else {
+       message.channel.send("Sorry you can't use this command").then(message.delete(15000))
+      
+    }
+    }
+}

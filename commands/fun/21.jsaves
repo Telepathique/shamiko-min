@@ -1,0 +1,163 @@
+const { RichEmbed } = require("discord.js");
+const { promptMessage } = require("../../functions.js");
+const chooseArr = ["✅", "❌"];
+
+module.exports = {
+  config: {
+    name: "blackjack",
+    aliases: ["21", "bj", "blackj", "card"],
+    category: "fun",
+    usage: "!blackjack and after use the emoji to play",
+    description: "starts a game of blackjack with the user",
+    Disabled: false,
+    cooldowns: 0,
+  },
+  run: async (bot,message, args) => {
+    
+    const cardList = [2,2, 3,3, 4, 5, 6, 7, 8, 9, 10,10,10,10,10,10,10,10,11,1];
+    const botCardList = [1,10,10,10,10,10,10, 10, 9, 8, 7, 6, 5, 4, 3, 2,2, 1];
+    const card1 = cardList[Math.floor(Math.random() * cardList.length)];
+    const card2 = cardList[Math.floor(Math.random() * cardList.length)];
+    //const botCard1 = A ;//botCardList[Math.floor(Math.random() * botCardList.length)];
+    const botCard1 =
+      botCardList[Math.floor(Math.random() * botCardList.length)];
+    const botCard2 =
+      botCardList[Math.floor(Math.random() * botCardList.length)];
+    const botCard3 =
+      botCardList[Math.floor(Math.random() * botCardList.length)];
+    const card3 = cardList[Math.floor(Math.random() * cardList.length)];
+    
+    const cardTotal = card1 + card2;
+    const botTotal = botCard1 + botCard2;
+    const cardTotalHit = cardTotal + card3;
+    const botTotalHit = botTotal + botCard3;
+    const botArr = [botTotal, botTotalHit, botTotal, botTotal];
+    var suites = [":spades:", ":hearts:", ":diamonds:", ":clubs:"];
+    const sort =    suites[Math.floor(Math.random() * suites.length)];
+   const sort1 = suites[Math.floor(Math.random() * suites.length)];
+     const sort2 =  suites[Math.floor(Math.random() * suites.length)];
+    const botChoice = botArr[Math.floor(Math.random() * botArr.length)];
+
+    const blackJackEmbed = new RichEmbed()
+      .setTitle("🃏 Blackjack 🃏")
+      .setColor("RANDOM")
+      .setDescription(
+        "**You drew " +
+        card1 + sort1+
+        " and " +
+        card2 + sort2+
+        " with a total of " +
+        cardTotal + sort +
+        "\n** and dealer first card is  " +
+        botCard1 + //debug "\n" +botChoice +
+          "\nYou have a min to decide\n ✅ - Hit \n❌ - Stand"
+      )
+      .setTimestamp();
+
+    const m = await message.channel.send(blackJackEmbed);
+    const reacted = await promptMessage(m, message.author, 60, chooseArr);
+    const result = await getResult(reacted, botChoice);
+    await m.clearReactions();
+
+    /* do i need to keep this? */ m.edit(blackJackEmbed);
+
+    // after evaluate the possible results
+    function getResult(me) {
+      // blackjack hit
+      if (cardTotalHit == 21)
+        return blackJackEmbed.setDescription("BlackJack ! you win");
+      // blackjack stay
+      else if (cardTotal == 21)
+        return blackJackEmbed.setDescription("BlackJack ! you win");
+      // house blackjack
+      else if (botChoice == 21)
+        return blackJackEmbed.setDescription(
+          "the house have a BlackJack ! you lost"
+        );
+      //  win case 1
+      else if (
+        me === "❌" &&
+        cardTotal < 21 &&
+        botChoice < 21 &&
+        botChoice < cardTotal &&
+        botChoice !== cardTotal
+      )
+        return (
+          blackJackEmbed.setDescription("You won !"),
+          blackJackEmbed.addField("cards", `${cardTotal}  vs ${botChoice}`)
+        );
+      // lose case 1
+      else if (
+        me === "❌" &&
+        cardTotal < 21 &&
+        botChoice < 21 &&
+        botChoice > cardTotal &&
+        botChoice !== cardTotal
+      )
+        return (
+          blackJackEmbed.setDescription("You lost!"),
+          blackJackEmbed.addField("cards", `${cardTotal}  vs ${botChoice}`)
+        );
+      // Case 2 hit win
+      else if (
+        me === "✅" &&
+        cardTotalHit < 21 &&
+        botChoice < 21 &&
+        botChoice < cardTotalHit &&
+        botChoice !== cardTotalHit
+      )
+        return (
+          blackJackEmbed.setDescription("You won !"),
+          blackJackEmbed.addField("cards", `${cardTotalHit}  vs ${botChoice}`)
+        );
+      //Lost case 2 me  hit
+      else if (
+        me === "✅" &&
+        cardTotalHit < 21 &&
+        botChoice < 21 &&
+        botChoice > cardTotalHit &&
+        botChoice !== cardTotalHit
+      )
+        return (
+          blackJackEmbed.setDescription("You lost!"),
+          blackJackEmbed.addField("cards", `${cardTotalHit}  vs ${botChoice}`)
+        );
+      // NO WINNER CASES :
+      // Tie case 1 me stay
+      else if (me === "❌" && botChoice == cardTotal)
+        return (
+          blackJackEmbed.setDescription("Its a Tie!"),
+          blackJackEmbed.addField("cards", `${cardTotal}  vs ${botChoice}`)
+        );
+      // Tie case 2 me hit
+      else if (me === "✅" && botChoice == cardTotalHit)
+        return (
+          blackJackEmbed.setDescription("Its a Tie!"),
+          blackJackEmbed.addField("cards", `${cardTotalHit}  vs ${botChoice}`)
+        );
+      // Bust The 21 cases
+      //case 1 House stay me stay busted house
+      else if (botChoice >= 22)
+        return (
+          blackJackEmbed.setDescription("You win the house busted"),
+          blackJackEmbed.addField("cards", `${cardTotal}  vs ${botChoice}`)
+        );
+      //case 2 me hit busted
+      else if (me === "✅" && cardTotalHit >= 22)
+        return (
+          blackJackEmbed.setDescription("You busted you lost"),
+          blackJackEmbed.addField("cards", `${cardTotalHit}  vs ${botChoice}`)
+        );
+      //case 3 me stay busted
+      else if (me === "❌" && cardTotal >= 22)
+        return (
+          blackJackEmbed.setDescription("You busted you lost"),
+          blackJackEmbed.addField("cards", `${cardTotal}  vs ${botChoice}`)
+        );
+      else
+        return blackJackEmbed.setDescription(
+          `Sorry but you didn't answered on the delay`
+        ); console.log(botChoice, cardTotal, cardTotalHit)
+    }
+  }
+};

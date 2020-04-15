@@ -1,0 +1,313 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Welcome to Shamiko-min bot!</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a class="active" href="new.html">News</a>
+    <a href="contact.html">Owner info</a>
+    <a href="image.html">Gallery</a>
+    <a
+      href="https://discordapp.com/oauth2/authorize?client_id=673732226793603079&scope=bot&permissions=8"
+      target="_parent"
+      >Invite me</a
+    >
+  </div>
+  <body>
+    <header class="top">
+      <h1><br /><br /><br />Shamiko-Min</h1>
+    </header>
+
+    <main>
+      <br /><br />
+      <p class="warning">
+        <marquee behavior="scroll">
+          When you invite the bot just start with <b>!setup</b> it will create
+          roles and needed channels.<br />
+        </marquee>
+      </p>
+      <h4>
+        Command list<br />
+        <div class="sub">
+          <a href="#mod">Go to the moderator command list</a>
+          <a href="#game">Go to the Fun games command list</a>
+          <a href="#info">Go to the Infos command list</a>
+          <a href="#currency">Go to the Infos command list</a>
+          <a href="#limited">Go to the Infos command list</a>
+        </div>
+      </h4>
+      <br />
+      <h2>Change log</h2>
+      <p>
+        Welcome to the basic info page of the bot.<br />
+        This bot is a simple node.js bot created by Kosmos.<br />
+        If you want to know more about all functions you can reach <br />
+        the command listing on bottom of this page<br /><br />
+
+        The bot version is actually : 1.0 <br /><br />
+
+        This mean the bot is on is first release.<br />
+        Kosmos is working to improve the functionnality of this bot.<br />
+
+        Whats new ?: <br /><br />
+
+        !whois command added <br />
+        this will return : <br /><img
+          src="https://cdn.glitch.com/94da85c3-7345-4fdf-896d-87cf90d792ac%2Fwhois.PNG?v=1586006943717"
+        />
+      </p>
+      <footer class="sub"></footer>
+      <div class="sub">
+      <a href="#top" class="sub">return to top</a>
+      </div>      
+      <table id="mod">
+        <th>Moderator Command</th>
+        <th>Usage:</th>
+        <th>Useable by :</th>
+        <tr>
+          <td>!kick</td>
+          <td>!kick @username reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!ban</td>
+          <td>!ban @username reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!mute</td>
+          <td>!mute @user reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!unmute</td>
+          <td>!unmute @user reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!unban</td>
+          <td>!unban @user reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!addrole</td>
+          <td>!addrole @user @rolename reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!removerole</td>
+          <td>!removerole @user @rolename reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!softban</td>
+          <td>!softban @user reason</td>
+          <td>Mods</td>
+        </tr>
+        <tr>
+          <td>!clear</td>
+          <td>!clear [2-99] messages will be deleted</td>
+          <td>Mods</td>
+        </tr>
+      </table>
+
+      <br />
+     <div class="sub">
+      <a href="#top" class="sub">return to top</a>
+      </div>      
+      <table id="game">
+        <th>Fun Command</th>
+        <th>Usage:</th>
+        <th>Useable by :</th>
+        <tr>
+          <td>!meme</td>
+          <td>!meme will display a random meme</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!rps</td>
+          <td>!rps and use the emoji to answer</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!seal</td>
+          <td>!seal similar to meme but just show cute seal picts</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!8ball</td>
+          <td>
+            !8ball will show a embeds with a random answer of your minding
+            question !
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!cats</td>
+          <td>
+            !cats return a random cat cuty image.
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!cat</td>
+          <td>
+            !cat return a fact about the cats in general.
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!dogs</td>
+          <td>
+            !dogs return a random dog picture.
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!dog</td>
+          <td>
+            !dog return a random dog life fact.
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!advice</td>
+          <td>
+            !advice return a random live advice.
+          </td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!hangman</td>
+          <td>
+            !hangman start a cool hangman game with all people in your channel.
+          </td>
+          <td>Members</td>
+        </tr>
+      </table>
+
+      <br />
+     <div class="sub">
+      <a href="#top" class="sub">return to top</a>
+      </div>      
+      <table id="info">
+        <th>info Command</th>
+        <th>Usage:</th>
+        <th>Useable by :</th>
+        <tr>
+          <td>!help</td>
+          <td>Display the list of all available commands</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!whois</td>
+          <td>Display info about the specified member</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!ping</td>
+          <td>!return api latency infos</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!report</td>
+          <td>!report @username reason</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!serverinfo</td>
+          <td>!serverinfo : it show information of the server</td>
+          <td>Members</td>
+        </tr>
+      </table>
+      <div class="sub">
+      <a href="#top" class="sub">return to top</a>
+      </div>      
+      <table id="currency">
+        <th>info Command</th>
+        <th>Usage:</th>
+        <th>Useable by :</th>
+        <tr>
+          <td>!market</td>
+          <td>Display the list of all available role to buy on the market.</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!pricing</td>
+          <td>!price and follow directives. </td>
+          <td>Administrators // moderators</td>
+        </tr>
+        <tr>
+          <td>!additem</td>
+          <td>!additem follow directives. id must be the role id.</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!buy</td>
+          <td>!buy marketitemname</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!pay</td>
+          <td>!pay follow the directives.</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!coins</td>
+          <td>!coins Display the amount of coins that you have.</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!coins-leader</td>
+          <td>!coins Display the top 10 of user coins.</td>
+          <td>Members</td>
+        </tr>
+      </table>
+      <div class="sub">
+      <a href="#top" class="sub">return to top</a>
+      </div>  
+      <p>
+        all the roles below are limited to the market first setup roles "mercenary", "general", and up.
+      </p>
+      <table id="limited">
+        <th>Role limited commands.</th>
+        <th>Usage:</th>
+        <th>Useable by :</th>
+        <tr>
+          <td>!work</td>
+          <td>!work add a random amount of coins to your wallet. must be done twice the first time., must be a mercenary role at least.</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!blackjack</td>
+          <td>!blackjack amount 0-100 coins</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!dices</td>
+          <td>!dices amount 0-100 coins</td>
+          <td>Members</td>
+        </tr>
+        <tr>
+          <td>!coinflip</td>
+          <td>!coinflip amount heads//tails</td>
+          <td>Members</td>
+        </tr>
+      </table>
+      
+    </main>
+
+    <footer>©copyright free , Made by Kosmos</footer>
+  </body>
+</html>

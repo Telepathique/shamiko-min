@@ -1,0 +1,47 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "shamikomin",
+  "version": "3.0.0",
+  "description": "Reading your mind, while you are away!",
+  "main": "index.html",
+  "Owner": "KoSmOs#7368",
+  "scripts": {
+    "start": "supervisor node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^11.6.3",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3",
+    "ytdl": "^1.3.0",
+    "ytdl-core": "^2.0.1",
+    "detective-cjs": "^3.1.1",
+    "ascii-table": "^0.0.9",
+    "common-tags": "^1.8.0",
+    "node-fetch": "^2.6.0",
+    "ejs": "^3.0.2",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.9",
+    "mongodb": "^3.5.5",
+    "keyv": "^4.0.0",
+    "superagent": "^5.2.2",
+    "crypto": "^1.0.1",
+    "node-superfetch": "^0.1.10",
+    "urban": "^0.3.2",
+    "node-localstorage": "^2.1.6",
+    "supervisor": "^0.12.0"
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/~shamiko-min-bot"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
